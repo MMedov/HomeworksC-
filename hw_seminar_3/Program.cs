@@ -23,6 +23,9 @@ else
 
 //Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 /*
+Console.Write("Введите число пятизначное число: ");
+int N = Convert.ToInt32(Console.ReadLine());
+
 void Is5Palindrom(int x)
 {
     int first = x / 10000;
@@ -34,9 +37,6 @@ void Is5Palindrom(int x)
     else Console.WriteLine("Не палиндром!");
 }
 
-
-Console.Write("Введите число пятизначное число: ");
-int N = Convert.ToInt32(Console.ReadLine());
 
 if(N<10000 || N>99999) Console.Write("Введенное число не пятизначное! ");
 else
