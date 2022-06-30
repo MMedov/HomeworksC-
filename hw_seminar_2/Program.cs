@@ -31,6 +31,11 @@ int SecondNumber(int num)
     int result = num2 % 10;
     return result;
 }
-Console.WriteLine(SecondNumber(x));
+
+if(x <100 || x > 999)
+    Console.Write("Введенное число не трехзначное!");
+else
+    Console.WriteLine(SecondNumber(x));
+
 
 //Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет
