@@ -21,7 +21,7 @@ IsItWeekend(x);
 
 
 //Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
-
+/*
 Console.Write("Введите трехзначное число: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
@@ -36,6 +36,20 @@ if(x <100 || x > 999)
     Console.Write("Введенное число не трехзначное!");
 else
     Console.WriteLine(SecondNumber(x));
-
+*/
 
 //Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет
+
+Console.Write("Введите число: ");
+int x = Convert.ToInt32(Console.ReadLine());
+int ThirdNumber(int num)
+{
+    while (num > 999) num = num / 10;
+    int result = num % 10;
+    return result;
+}
+
+if(x <100)
+    Console.Write("Третьей цифры нет!");
+else
+    Console.WriteLine(ThirdNumber(x));
