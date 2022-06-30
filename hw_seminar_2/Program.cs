@@ -1,4 +1,5 @@
-﻿Console.Write("Введите день недели: ");
+﻿/*
+Console.Write("Введите номер дня недели: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
 void IsItWeekend(int num)
@@ -12,4 +13,24 @@ void IsItWeekend(int num)
         else
         Console.WriteLine("Нет, это не выходной!");
 }
+
 IsItWeekend(x);
+*/
+
+
+
+
+//Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+Console.Write("Введите трехзначное число: ");
+int x = Convert.ToInt32(Console.ReadLine());
+
+int SecondNumber(int num)
+{
+    int num2 = num / 10;
+    int result = num2 % 10;
+    return result;
+}
+Console.WriteLine(SecondNumber(x));
+
+//Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет
