@@ -1,24 +1,46 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿/*
+Console.Write("Input min possible value of elements: "); 
+int min = Convert.ToInt32(Console.ReadLine()); 
+Console.Write("Input max possible value of elements: "); 
+int max = Convert.ToInt32(Console.ReadLine()); 
+void ShowArray(int[] array) 
+{ 
+    for(int i = 0; i < array.Length; i++) 
+        Console.Write(array[i] + " "); 
+ 
+    Console.WriteLine(); 
+} 
 
-Console.WriteLine("Hello, World!");
-int[] five = {1, 6, 3, 0, 8};
-void FromMaxToMin(int[] array)
-{
-    
-    for(int i=0; i<array.Length; i++)
+ */
+//Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+int[] CreateRandomArray(int size, int min, int max) 
+{ 
+    int[] array = new int[size];  
+ 
+    for(int i = 0; i < size; i++) 
+    array[i] = new Random().Next(min, max); 
+    return array; 
+} 
+int CountOfEvens(int[] array)
+ {  int count = 0;
+    for(int i = 0; i<array.Length; i++)
     {
-        int Maximum = i;
-        for(int j=i+1; j<array.Length; j++)
-        {
-            if(array[j]>array[Maximum])
-            Maximum = j;
-        }
-        int temp = array[i];
-        array[i] = array[Maximum];
-        array[j] = temp;
-        
+        if(array[i] % 2 == 0) count++;  
     }
-}
 
-void FromMaxToMin(int[] array)
+    return count;
+ }
+void ShowArray(int[] array) 
+{ 
+    for(int i = 0; i < array.Length; i++) 
+        Console.Write(array[i] + " "); 
+ 
+    Console.WriteLine(); 
+} 
 
+int size = new Random().Next(10, 20);
+int min = 100;
+int max = 999;
+int[] arr = CreateRandomArray(size, min, max); 
+ShowArray(arr);
+Console.Write(CountOfEvens(arr));
