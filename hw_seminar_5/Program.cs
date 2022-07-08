@@ -62,7 +62,7 @@ void ShowArray(int[] array)
  
     Console.WriteLine(); 
 } 
-int SumOfOdds(int[] array)
+int SumOfOddPositions(int[] array)
 {
     int sum = 0;
     for(int i = 1; i < array.Length; i+=2) sum = sum + array[i];
@@ -74,4 +74,4 @@ int min = 0;
 int max = 9;
 int[] arr = CreateRandomArray(size, min, max); 
 ShowArray(arr);
-Console.Write(SumOfOdds(arr));
+Console.Write(SumOfOddPositions(arr));
