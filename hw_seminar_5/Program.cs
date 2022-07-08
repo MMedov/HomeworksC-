@@ -39,7 +39,7 @@ int CountOfEvens(int[] array)
     return count;
  }
 
-int size = new Random().Next(10, 20);
+int size = new Random().Next(10, 15);
 int min = 100;
 int max = 999;
 int[] arr = CreateRandomArray(size, min, max); 
@@ -47,6 +47,7 @@ ShowArray(arr);
 Console.Write(CountOfEvens(arr));
 */
 //Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+/*
 int[] CreateRandomArray(int size, int min, int max) 
 { 
     int[] array = new int[size];  
@@ -69,9 +70,44 @@ int SumOfOddPositions(int[] array)
     return sum;
 }
 
-int size = new Random().Next(10, 20);
+int size = new Random().Next(10, 15);
 int min = 0;
 int max = 9;
 int[] arr = CreateRandomArray(size, min, max); 
 ShowArray(arr);
 Console.Write(SumOfOddPositions(arr));
+*/
+//Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+int[] CreateRandomArray(int size, int min, int max) 
+{ 
+    int[] array = new int[size];  
+ 
+    for(int i = 0; i < size; i++) 
+    array[i] = new Random().Next(min, max); 
+    return array; 
+} 
+void ShowArray(int[] array) 
+{ 
+    for(int i = 0; i < array.Length; i++) 
+        Console.Write(array[i] + " "); 
+ 
+    Console.WriteLine(); 
+} 
+int MaxMinDifference(int[] array)
+{
+    int max = array[0];
+    int min = array[0];
+    for(int i=1; i<array.Length; i++)
+    {
+        if(array[i] > max) max = array[i];
+        if(array[i] < min) min = array[i];
+    }
+    return max-min;
+}
+
+int size = new Random().Next(10, 15);
+int min = 1;
+int max = 99;
+int[] arr = CreateRandomArray(size, min, max); 
+ShowArray(arr);
+Console.Write(MaxMinDifference(arr));
