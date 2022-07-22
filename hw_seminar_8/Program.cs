@@ -119,3 +119,53 @@ Console.WriteLine(MinSumRow(arr));
 */
 
 //Заполните спирально массив 4 на 4
+
+int[,] CreateSpiralArray(int r, int c)
+{
+ int[,] array = new int[r, c];
+ int x = 1;
+        for (int j = 0; j < c; j++) {
+            array[0,j] = x;
+            x++;
+        }
+        for (int i = 1; i < r; i++) {
+            array[i,c-1] = x;
+            x++;
+        }
+        for (int j = c - 2; j >= 0; j--) {
+            array[r-1,j] = x;
+            x++;
+        }
+        for (int i = r - 2; i > 0; i--) {
+            array[i,0] = x;
+            x++;
+        }
+        //Для заполнения внутреннего квадрата
+        for (int j = 1; j < c-1; j++) {
+            array[1,j] = x;
+            x++;
+        }
+        for (int i = 2; i < r-1; i++) {
+            array[i,c-2] = x;
+            x++;
+        }
+        for (int j = c - 3; j >= 1; j--) {
+            array[r-2,j] = x;
+            x++;
+        }
+ 
+ return array;
+}
+void ShowArray(int[,] array) 
+{ 
+    for(int i=0; i<array.GetLength(0); i++)
+    {
+        for(int j=0; j<array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+        
+} 
+ShowArray(CreateSpiralArray(4, 4));
